@@ -1,13 +1,13 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { Contact } from "./components/contact";
-import { Expirience } from "./components/experience";
 import { Footer } from "./components/footer";
-import { MyProjects } from "./components/myProjects";
-import { MySkills } from "./components/mySkills";
+import { HowItWorks } from "./components/howItWorks";
 import { Navbar } from "./components/navbar";
+import { Packages } from "./components/packages";
 import { Services } from "./components/services";
 import ShowCase from "./components/showCase";
+import { WhoWeAre } from "./components/whoWeAre";
 import { Container, MainBody } from "./styles/global.styled";
 import { theme } from "./utils/theme";
 
@@ -18,10 +18,10 @@ function App() {
         <Navbar />
         <Container>
           <ShowCase />
-          <MySkills />
-          <Expirience />
-          <MyProjects />
+          <WhoWeAre />
           <Services />
+          <Packages />
+          <HowItWorks />
           <Contact />
           <Footer />
         </Container>

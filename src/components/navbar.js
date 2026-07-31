@@ -1,44 +1,32 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { Button, Container, FlexContainer, PaddingContainer } from "../styles/global.styled";
 import {
-  BlueText,
-  Container,
-  FlexContainer,
-  PaddingContainer,
-} from "../styles/global.styled";
-import {
-  LanguageImg,
+  LogoLink,
   Logo,
   MenuIcon,
+  NavCta,
+  NavLink,
+  NavLinks,
   Navbarcontainer,
 } from "../styles/navbar.styled";
+import { buildWhatsAppLink } from "../utils/whatsapp";
+import { BrandIcon } from "./layouts/brandIcon";
 import { NavMenu } from "./layouts/navMenu";
 
+const NAV_ITEMS = [
+  { href: "#quem-somos", label: "Quem somos" },
+  { href: "#servicos", label: "Serviços" },
+  { href: "#pacotes", label: "Pacotes" },
+  { href: "#processo", label: "Como funciona" },
+  { href: "#contato", label: "Contato" },
+];
+
 export const Navbar = () => {
-  const {
-    t,
-    i18n: { changeLanguage, language },
-  } = useTranslation();
-
-  const [currentLanguage, setCurrentLanguage] = useState(language);
-
-  const handleChangeLanguage = (newLanguage) => {
-    changeLanguage(newLanguage);
-    setCurrentLanguage(newLanguage);
-  };
-  const handleFlagClick = (flagLanguage) => {
-    if (flagLanguage === "en" && currentLanguage !== "en") {
-      handleChangeLanguage("en");
-    } else if (flagLanguage === "pt" && currentLanguage !== "pt") {
-      handleChangeLanguage("pt");
-    }
-  };
-
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
-    <Navbarcontainer bgColor="transparent">
+    <Navbarcontainer>
       <PaddingContainer
         top="1.2rem"
         bottom="1.2rem"
@@ -46,25 +34,34 @@ export const Navbar = () => {
         responsiveRight="1rem"
       >
         <Container>
-          <FlexContainer justify="space-between" responsiveFlex>
-            <Logo>
-              Nathan Ribeiro <BlueText>Dev</BlueText>
-            </Logo>
-            <MenuIcon>
-              <LanguageImg
-                onClick={() => handleFlagClick("pt")}
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Brazilian_Flag_-_round.svg/2048px-Brazilian_Flag_-_round.svg.png"
-              />
-              <LanguageImg
-                onClick={() => handleFlagClick("en")}
-                src="https://static.vecteezy.com/system/resources/previews/013/743/592/original/united-states-flag-round-icon-american-flag-png.png"
-              />
-              <GiHamburgerMenu
-                onClick={() => {
-                  setOpenMenu(true);
-                }}
-              />
-            </MenuIcon>
+          <FlexContainer justify="space-between" align="center" responsiveFlex>
+            <LogoLink href="#inicio">
+              <BrandIcon size="1.9rem" starColor="#E8A33D" arcColor="#5B7FBF" />
+              <Logo>CELEST</Logo>
+            </LogoLink>
+            <FlexContainer align="center" gap="2.5rem">
+              <NavLinks>
+                {NAV_ITEMS.map((item) => (
+                  <NavLink key={item.href} href={item.href}>
+                    {item.label}
+                  </NavLink>
+                ))}
+              </NavLinks>
+              <NavCta>
+                <Button
+                  href={buildWhatsAppLink(
+                    "Olá! Encontrei a Celest pelo site e quero saber mais sobre os pacotes."
+                  )}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Falar no WhatsApp
+                </Button>
+              </NavCta>
+              <MenuIcon onClick={() => setOpenMenu(true)}>
+                <GiHamburgerMenu />
+              </MenuIcon>
+            </FlexContainer>
           </FlexContainer>
         </Container>
         {openMenu && <NavMenu setOpenMenu={setOpenMenu} />}

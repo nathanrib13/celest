@@ -1,50 +1,38 @@
 import React from "react";
-import { BsGithub, BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
-import { FooterRights } from "../styles/footer.styled";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { MdEmail } from "react-icons/md";
+import { FooterBrand, FooterRights } from "../styles/footer.styled";
 import { IconContainer } from "../styles/global.styled";
+import { buildWhatsAppLink } from "../utils/whatsapp";
+import { BrandIcon } from "./layouts/brandIcon";
 
 export const Footer = () => {
   return (
     <FooterRights>
-      <p>© Todos os Diretos Reservados - Nathan Ribeiro</p>
+      <FooterBrand>
+        <BrandIcon size="1.4rem" starColor="#E8A33D" arcColor="#5B7FBF" />
+        <span>CELEST</span>
+      </FooterBrand>
+      <p>
+        © {new Date().getFullYear()} Celest. Todos os direitos reservados.
+      </p>
       <div>
-        <IconContainer color="white" size="1.5rem">
+        <IconContainer size="1.4rem">
           <a
-            rel="noreferrer"
-            href="https://linkedin.com/in/devnathanrib/"
+            href={buildWhatsAppLink("Olá! Quero falar com a Celest.")}
             target="_blank"
+            rel="noreferrer"
+            aria-label="WhatsApp da Celest"
           >
-            <BsLinkedin color="white" />
+            <IoLogoWhatsapp />
           </a>
         </IconContainer>
-
-        <IconContainer size="1.5rem">
+        <IconContainer size="1.4rem">
           <a
-            rel="noreferrer"
-            href="https://www.instagram.com/dev.nathanribeiro/"
-            target="_blank"
+            href="mailto:celest.contato@gmail.com"
+            aria-label="E-mail da Celest"
           >
-            <BsInstagram color="white" />
-          </a>
-        </IconContainer>
-
-        <IconContainer size="1.5rem">
-          <a
-            rel="noreferrer"
-            href="https://github.com/nathanrib13/"
-            target="_blank"
-          >
-            <BsGithub color="white" />
-          </a>
-        </IconContainer>
-
-        <IconContainer size="1.5rem">
-          <a
-            rel="noreferrer"
-            href="https://linkedin.com/in/devnathanrib/"
-            target="_blank"
-          >
-            <BsTwitter color="white" />
+            <MdEmail />
           </a>
         </IconContainer>
       </div>
