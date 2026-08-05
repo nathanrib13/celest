@@ -5,6 +5,7 @@ import { Footer } from "./components/footer";
 import { HowItWorks } from "./components/howItWorks";
 import { Navbar } from "./components/navbar";
 import { Packages } from "./components/packages";
+import { Projects } from "./components/projects";
 import { Services } from "./components/services";
 import ShowCase from "./components/showCase";
 import { WhoWeAre } from "./components/whoWeAre";
@@ -20,6 +21,7 @@ function App() {
           <ShowCase />
           <WhoWeAre />
           <Services />
+          <Projects />
           <Packages />
           <HowItWorks />
           <Contact />

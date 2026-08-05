@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Eyebrow,
+  GlowOrb,
   Heading,
   PaddingContainer,
   ParaText,
@@ -9,9 +10,9 @@ import { Pillar, PillarRow } from "../styles/whoWeAre.styled";
 import { Reveal } from "./layouts/reveal";
 
 const PILLARS = [
-  "Sofisticação sem distância",
-  "Tecnologia sem jargão",
   "Resultado em primeiro lugar",
+  "Cliente no centro",
+  "Suporte humanizado",
 ];
 
 export const WhoWeAre = () => (
@@ -21,16 +22,20 @@ export const WhoWeAre = () => (
     bottom="10%"
     responsiveLeft="1rem"
     responsiveRight="1rem"
+    style={{ position: "relative", zIndex: 0, overflow: "hidden" }}
   >
+    <GlowOrb color="rgba(91, 127, 191, 0.85)" size="480px" top="-18%" left="-12%" $zIndex={-1} />
     <Reveal>
       <Eyebrow>Essência</Eyebrow>
       <Heading as="h2" size="h2" top="0.5rem">
         Quem somos
       </Heading>
       <ParaText top="1rem" bottom="1rem">
-        A Celest é um estúdio de tecnologia que une o cuidado de uma grande
-        empresa à agilidade de um time enxuto. Sites, automações e
-        aplicativos que colocam o seu negócio para funcionar melhor.
+        A Celest nasceu para provar que tecnologia de ponta não precisa soar
+        distante nem custar como uma consultoria de grande porte. Somos um
+        estúdio enxuto que veste a camisa de quem atende: entendemos a
+        rotina do seu negócio, traduzimos o que é complexo em algo simples
+        de usar e acompanhamos cada etapa como se o projeto fosse nosso.
       </ParaText>
       <PillarRow>
         {PILLARS.map((pillar) => (

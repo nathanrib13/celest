@@ -1,15 +1,18 @@
 import { motion } from "framer-motion";
 import React from "react";
+import { PROCESS_STEPS } from "../../utils/processSteps";
 
 const STAR_PATH =
   "M0 -28 C2 -8 8 -2 30 0 C8 2 2 8 0 28 C-2 8 -8 2 -30 0 C-8 -2 -2 -8 0 -28 Z";
 
-const POINTS = [
-  { x: 70, y: 260, number: "01", title: "Diagnóstico" },
-  { x: 280, y: 195, number: "02", title: "Proposta" },
-  { x: 490, y: 120, number: "03", title: "Desenvolvimento" },
-  { x: 700, y: 55, number: "04", title: "Lançamento" },
+const COORDS = [
+  { x: 70, y: 260 },
+  { x: 280, y: 195 },
+  { x: 490, y: 120 },
+  { x: 700, y: 55 },
 ];
+
+const POINTS = PROCESS_STEPS.map((step, i) => ({ ...COORDS[i], ...step }));
 
 const STAR = { x: 745, y: 32 };
 
@@ -18,7 +21,7 @@ const PATH_D =
 
 export const ProgressChart = () => (
   <svg
-    viewBox="0 0 800 320"
+    viewBox="0 -40 800 360"
     width="100%"
     role="img"
     aria-label="Linha do processo, do diagnóstico ao resultado"

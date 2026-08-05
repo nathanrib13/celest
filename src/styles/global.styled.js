@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const MainBody = styled.div`
-  background-color: ${({ theme }) => theme.colors.midnight};
+  position: relative;
+  overflow: hidden;
 `;
 export const Container = styled.div`
   width: 90%;
@@ -16,8 +17,8 @@ export const PaddingContainer = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding-top: ${({ responsiveTop }) => responsiveTop};
-    padding-bottom: ${({ responsivebottom }) => responsivebottom};
-    padding-left: ${({ responsiveleft }) => responsiveleft};
+    padding-bottom: ${({ responsiveBottom }) => responsiveBottom};
+    padding-left: ${({ responsiveLeft }) => responsiveLeft};
     padding-right: ${({ responsiveRight }) => responsiveRight};
   }
 `;
@@ -115,28 +116,28 @@ export const Button = styled.a`
   background-color: ${({ theme, outline }) =>
     outline ? "transparent" : theme.colors.gold};
   border: 1px solid
-    ${({ theme, outline }) => (outline ? theme.colors.midnightBorder : theme.colors.gold)};
+    ${({ theme, outline }) => (outline ? theme.colors.skyBorder : theme.colors.gold)};
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.25s ease;
 
   &:hover {
     background-color: ${({ theme, outline }) =>
-      outline ? theme.colors.midnightSoft : theme.colors.goldHover};
+      outline ? theme.colors.skySoft : theme.colors.goldHover};
     border-color: ${({ theme, outline }) =>
-      outline ? theme.colors.gold : theme.colors.goldHover};
+      outline ? theme.colors.sky : theme.colors.goldHover};
   }
 `;
 export const CardSurface = styled.div`
   position: relative;
   background: linear-gradient(
     165deg,
-    rgba(244, 242, 236, 0.06),
-    rgba(244, 242, 236, 0.015)
+    rgba(91, 127, 191, 0.09),
+    rgba(244, 242, 236, 0.02)
   );
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1px solid ${({ theme }) => theme.colors.midnightBorder};
+  border: 1px solid ${({ theme }) => theme.colors.skyBorder};
   border-radius: 1.25rem;
   transition: border-color 0.25s ease, transform 0.25s ease,
     box-shadow 0.25s ease;
@@ -159,7 +160,7 @@ export const GlowOrb = styled.div`
   filter: blur(100px);
   opacity: 0.28;
   pointer-events: none;
-  z-index: 0;
+  z-index: ${({ $zIndex }) => $zIndex ?? 0};
   background: ${({ color, theme }) => color || theme.colors.gold};
 `;
 export const IconContainer = styled.div`

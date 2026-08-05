@@ -10,6 +10,7 @@ import {
 } from "../styles/global.styled";
 import {
   BrandGlow,
+  BrandGlowBlue,
   BrandMarkWrap,
   ConstellationWrap,
   HeroGrid,
@@ -68,6 +69,7 @@ const ShowCase = () => {
               <Rocket size={70} />
             </RocketWrap>
             <BrandMarkWrap>
+              <BrandGlowBlue />
               <BrandGlow />
               <BrandIcon size="6.5rem" starColor="#E8A33D" arcColor="#5B7FBF" />
               <WordmarkBig>CELEST</WordmarkBig>

@@ -75,6 +75,20 @@ export const BrandGlow = styled.div`
   animation: ${pulse} 3s ease-in-out infinite;
 `;
 
+export const BrandGlowBlue = styled.div`
+  position: absolute;
+  inset: -90px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(91, 127, 191, 0.3),
+    transparent 70%
+  );
+  filter: blur(32px);
+  z-index: -2;
+  animation: ${pulse} 4s ease-in-out infinite reverse;
+`;
+
 export const WordmarkBig = styled.p`
   font-family: ${({ theme }) => theme.fonts.titles};
   font-weight: ${({ theme }) => theme.fonts.weigth.bold};

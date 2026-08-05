@@ -47,6 +47,15 @@ export const ServicesGrid = styled.div`
   }
 `;
 
+const BADGE_GRADIENTS = {
+  gold: ({ theme }) =>
+    `linear-gradient(135deg, ${theme.colors.gold}, ${theme.colors.goldHover})`,
+  sky: ({ theme }) =>
+    `linear-gradient(135deg, ${theme.colors.sky}, ${theme.colors.skyHover})`,
+  mixed: ({ theme }) =>
+    `linear-gradient(135deg, ${theme.colors.gold}, ${theme.colors.sky})`,
+};
+
 export const IconBadge = styled.div`
   width: 60px;
   height: 60px;
@@ -56,11 +65,7 @@ export const IconBadge = styled.div`
   justify-content: center;
   font-size: 1.7rem;
   color: ${({ theme }) => theme.colors.midnight};
-  background: linear-gradient(
-    135deg,
-    ${({ theme }) => theme.colors.gold},
-    ${({ theme }) => theme.colors.goldHover}
-  );
+  background: ${(props) => (BADGE_GRADIENTS[props.variant] || BADGE_GRADIENTS.gold)(props)};
   transition: transform 0.3s ease;
 `;
 

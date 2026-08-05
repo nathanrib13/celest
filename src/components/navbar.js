@@ -17,6 +17,7 @@ import { NavMenu } from "./layouts/navMenu";
 const NAV_ITEMS = [
   { href: "#quem-somos", label: "Quem somos" },
   { href: "#servicos", label: "Serviços" },
+  { href: "#projetos", label: "Projetos" },
   { href: "#pacotes", label: "Pacotes" },
   { href: "#processo", label: "Como funciona" },
   { href: "#contato", label: "Contato" },

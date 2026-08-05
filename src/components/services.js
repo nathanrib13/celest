@@ -12,18 +12,21 @@ import { Reveal } from "./layouts/reveal";
 const SERVICES = [
   {
     icon: <TbBrowser />,
+    variant: "gold",
     title: "Sites institucionais",
     description: "Sua vitrine digital, rápida e feita para converter.",
   },
   {
     icon: <TbRobot />,
-    title: "Automações e robôs",
-    description: "Tarefas repetitivas no automático, tempo de volta pra você.",
+    variant: "sky",
+    title: "Automações com IA e robôs",
+    description: "Inteligência artificial cuidando do trabalho repetitivo, tempo de volta pra você.",
   },
   {
     icon: <TbDeviceMobile />,
+    variant: "mixed",
     title: "Aplicativos",
-    description: "Do protótipo à Play Store, feito para o seu usuário.",
+    description: "Do protótipo à loja de aplicativos, feito para o seu usuário.",
   },
 ];
 
@@ -41,7 +44,7 @@ export const Services = () => {
         {SERVICES.map((service, index) => (
           <Reveal key={service.title} delay={index * 0.12}>
             <ServiceContainer>
-              <IconBadge>{service.icon}</IconBadge>
+              <IconBadge variant={service.variant}>{service.icon}</IconBadge>
               <h2>{service.title}</h2>
               <p>{service.description}</p>
             </ServiceContainer>

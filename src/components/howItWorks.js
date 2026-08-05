@@ -1,6 +1,14 @@
 import React from "react";
 import { Eyebrow, Heading, PaddingContainer } from "../styles/global.styled";
-import { ChartInner, ChartScroll } from "../styles/howItWorks.styled";
+import {
+  ChartInner,
+  ChartScroll,
+  StepBullet,
+  StepContent,
+  StepItem,
+  StepsList,
+} from "../styles/howItWorks.styled";
+import { PROCESS_STEPS } from "../utils/processSteps";
 import { ProgressChart } from "./layouts/progressChart";
 import { Reveal } from "./layouts/reveal";
 
@@ -22,6 +30,17 @@ export const HowItWorks = () => (
           <ProgressChart />
         </ChartInner>
       </ChartScroll>
+      <StepsList>
+        {PROCESS_STEPS.map((step) => (
+          <StepItem key={step.number}>
+            <StepBullet>{step.number}</StepBullet>
+            <StepContent>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </StepContent>
+          </StepItem>
+        ))}
+      </StepsList>
     </Reveal>
   </PaddingContainer>
 );

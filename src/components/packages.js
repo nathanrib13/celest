@@ -3,6 +3,7 @@ import { FaCheck } from "react-icons/fa6";
 import {
   Button,
   Eyebrow,
+  GlowOrb,
   Heading,
   PaddingContainer,
   ParaText,
@@ -22,37 +23,40 @@ import { Reveal } from "./layouts/reveal";
 const PACKAGES = [
   {
     name: "Io",
-    tagline: "O primeiro lançamento.",
-    description: "Site institucional profissional para começar com o pé direito.",
+    tagline: "O primeiro passo rumo à órbita.",
+    description:
+      "Um serviço pontual e objetivo, sem enrolação: o empurrão certo pra tirar a sua ideia do papel. Ideal para quem precisa de agilidade agora, seja um site rápido, uma automação específica ou uma dor bem definida do dia a dia.",
     items: [
-      "Site responsivo (até 5 páginas)",
+      "Escopo único e objetivo (site, automação ou app pontual)",
+      "Entrega ágil, sem burocracia",
       "Design com a sua identidade",
-      "SEO básico",
-      "Domínio e hospedagem prontos",
+      "Suporte no lançamento",
     ],
     highlight: false,
   },
   {
     name: "Europa",
-    tagline: "Automação em órbita.",
-    description: "Site mais automações que tiram tarefas repetitivas da sua rotina.",
+    tagline: "Sua operação em órbita constante.",
+    description:
+      "Um serviço mais completo, pensado para crescer junto com o seu negócio: levantamento aprofundado das suas necessidades, site ou sistema sob medida, integrações que conversam entre si e manutenção contínua para nada travar.",
     items: [
-      "Tudo do pacote Io",
-      "Automações sob medida",
-      "Integração com WhatsApp e planilhas",
-      "Suporte prioritário",
+      "Levantamento completo das suas necessidades",
+      "Site ou sistema sob medida",
+      "Integrações com WhatsApp, planilhas e outras ferramentas",
+      "Manutenção e suporte contínuos",
     ],
     highlight: true,
   },
   {
     name: "Ganimedes",
-    tagline: "O ecossistema completo.",
-    description: "Site, automações e aplicativo, tudo integrado e escalável.",
+    tagline: "A Celest como braço tecnológico do seu negócio.",
+    description:
+      "Para quando a tecnologia deixa de ser projeto e vira parte da operação. Assumimos como uma assessoria completa: sistemas, automações, inteligência artificial e as demais frentes de tecnologia que o seu negócio precisar, com acompanhamento contínuo e estratégico.",
     items: [
-      "Tudo do pacote Europa",
-      "Aplicativo mobile",
-      "Área logada para clientes",
-      "Acompanhamento contínuo",
+      "Assessoria contínua em tecnologia",
+      "Sistemas, automações e IA sob um só time",
+      "Acompanhamento estratégico do negócio",
+      "Prioridade total em suporte e evolução",
     ],
     highlight: false,
   },
@@ -67,7 +71,9 @@ export const Packages = () => {
       align="center"
       responsiveLeft="1rem"
       responsiveRight="1rem"
+      style={{ position: "relative", zIndex: 0, overflow: "hidden" }}
     >
+      <GlowOrb color="rgba(232, 163, 61, 0.5)" size="500px" top="-10%" right="-15%" $zIndex={-1} />
       <Eyebrow align="center">Escolha seu estágio</Eyebrow>
       <Heading as="h2" size="h2" align="center" top="0.5rem">
         Pacotes
